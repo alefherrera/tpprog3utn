@@ -11,6 +11,21 @@ namespace WindowsFormsApplication1
 {
     public partial class Login : Form
     {
+        public void validacion_log()
+        {
+            if (textBox1.Text.Length > 9)
+            {
+                MessageBox.Show("Por Favor ingrese un nombre de usuario valido");
+                textBox1.Focus();
+            }
+            else if (textBox2.Text.Length > 9)
+            {
+                MessageBox.Show("Por Favor ingrese una contraseña valida");
+                textBox2.Focus();
+            }
+            else this.Close();
+        }
+        
         public Login()
         {
             InitializeComponent();
@@ -18,7 +33,7 @@ namespace WindowsFormsApplication1
 
         private void logear_Click(object sender, EventArgs e)
         {
-            this.Close();
+            validacion_log();
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -30,7 +45,7 @@ namespace WindowsFormsApplication1
         {
             if (e.KeyChar == (char)13)
             {
-                this.Close();
+                validacion_log();
             }
         }
     
