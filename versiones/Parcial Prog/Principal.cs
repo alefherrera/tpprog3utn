@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
 
         string rutaSql = "Data Source=localhost;Initial Catalog=Almacen;Integrated Security=True";
         string con_mostrar = "select * from ";//Utilizada para armar una consulta para mostrar datos
-        string con_insert = "insert into ";//Utilizada para armar una consulta para agregar datos
+        //string con_insert = "insert into ";//Utilizada para armar una consulta para agregar datos
         SqlConnection conexion;
         SqlDataAdapter adaptador;
         DataSet dataset;
@@ -50,11 +50,12 @@ namespace WindowsFormsApplication1
         /// <param name="a">Tipo de consulta</param>
         /// <param name="b">Datos a agregar en la consulta</param>
         /// <param name="c">Nombre de la Tabla</param>
-        public void Ejecutar_consulta(bool Abrir_conexion,string a,string b,string c)
+        /// <param name="d">Nombre de la Grilla</param>
+        public void Ejecutar_consulta(bool Abrir_conexion,string a,string b,string c,DataGridView d)
         {
             crear_conexion(a, b, c);
             if (Abrir_conexion) conexion.Open();
-            Grilla.DataSource = dataset.Tables[c];
+            d.DataSource = dataset.Tables[c];
             adaptador.Dispose();
         }
         
@@ -62,7 +63,8 @@ namespace WindowsFormsApplication1
         {            
             this.Hide();//Oculta esta ventana
             login.ShowDialog();//Muestra la ventana de Login
-            Ejecutar_consulta(true, con_mostrar, "Loggear", "Loggear");
+            Ejecutar_consulta(true, con_mostrar, "Articulos", "Articulos", Grilla);
+            Ejecutar_consulta(false, con_mostrar, "Proveedores", "Proveedores", Grilla2);
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,12 +72,20 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-        private void BotonAcept_Click(object sender, EventArgs e)
+        /*private void BotonAcept_Click(object sender, EventArgs e)
         {
 
             dataset.Clear();
             Ejecutar_consulta(false, con_insert, "Loggear(usuario,pass) values('" + textBox1.Text + "','" + textBox2.Text + "')", "Loggear");
             Ejecutar_consulta(false, con_mostrar, "Loggear", "Loggear");
+        }*/
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
+
+       
+        
     }
 }
