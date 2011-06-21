@@ -15,11 +15,13 @@ namespace WindowsFormsApplication1
         Login login = new Login();
 
         string rutaSql = "Data Source=localhost;Initial Catalog=Almacen;Integrated Security=True";
-        string con_mostrar = "select * from ";//Utilizada para armar una consulta para mostrar datos
-        //string con_insert = "insert into ";//Utilizada para armar una consulta para agregar datos
+        string ConsultaSql = null;
         SqlConnection conexion;
         SqlDataAdapter adaptador;
         DataSet dataset;
+
+        TabPage nueva_pestaña;
+        DataGridView nueva_grilla;
 
 
         public Principal()
@@ -30,41 +32,52 @@ namespace WindowsFormsApplication1
        /// <summary>
        /// Funcion que crea la consulta, y carga la tabla en una matriz
        /// </summary>
-       /// <param name="a">Tipo de consulta</param>
-       /// <param name="b">Datos a agregar en la consulta</param>
-       /// <param name="c">Nombre de la Tabla</param>
-        public void crear_conexion(string a,string b,string c)
+       /// <param name="a">Nombre de la Tabla</param>
+        public void crear_conexion(string a)
         {
-            string consulta;
-            consulta = a += b;
-            conexion = new SqlConnection(rutaSql);
+            string consulta = ConsultaSql += a;
             adaptador = new SqlDataAdapter(consulta, conexion);
             dataset = new DataSet();
-            adaptador.Fill(dataset,c);            
+            adaptador.Fill(dataset,a);         
         }
 
         /// <summary>
         /// Una vez realizada la consulta, muestra el resultado en la grilla
         /// </summary>
-        /// <param name="Abrir_conexion">True cuando se requiere abrir la conexion, False cuando solamente se desea mostrar</param>
-        /// <param name="a">Tipo de consulta</param>
-        /// <param name="b">Datos a agregar en la consulta</param>
-        /// <param name="c">Nombre de la Tabla</param>
-        /// <param name="d">Nombre de la Grilla</param>
-        public void Ejecutar_consulta(bool Abrir_conexion,string a,string b,string c,DataGridView d)
+        /// <param name="a">Consulta</param>
+        /// <param name="b">Nombre de la Tabla</param>
+        /// <param name="a">Nombre de la Grilla</param>
+        public void Ejecutar_consulta(string a, string b, DataGridView c)
         {
-            crear_conexion(a, b, c);
-            if (Abrir_conexion) conexion.Open();
-            d.DataSource = dataset.Tables[c];
+            ConsultaSql = a;
+            crear_conexion(b);
+            c.DataSource = dataset.Tables[b];
             adaptador.Dispose();
+        }
+
+        public void Crear_pestaña(string a)
+        {
+            nueva_pestaña = new TabPage(a);
+            tabControl1.TabPages.Add(nueva_pestaña);
+        }
+
+        public void Crear_grid(string a)
+        {
+            nueva_grilla = new DataGridView();
+            nueva_grilla.Name = a;
         }
         
         private void Principal_Load(object sender, EventArgs e)
-        {            
+        {
+            
+            //nueva_pestaña = new TabPage("nueva");
+            //tabControl1.TabPages.Add(nueva_pestaña);
+            conexion = new SqlConnection(rutaSql);
             this.Hide();//Oculta esta ventana
             login.ShowDialog();//Muestra la ventana de Login
-            Ejecutar_consulta(true, con_mostrar, "Articulos", "Articulos", Grilla);
-            Ejecutar_consulta(false, con_mostrar, "Proveedores", "Proveedores", Grilla2);
+            conexion.Open();
+            Ejecutar_consulta("select * from ", "Articulos", Grilla);
+            Ejecutar_consulta("select * from ", "Proveedores", Grilla2);
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,6 +98,23 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            if((tabControl1.SelectedTab != Pest1) && (tabControl1.SelectedTab != Pest2))
+            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+        }
+
+        /*private void proveedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Crear_pestaña("Proveedores");
+           // Crear_grid("Grilla3");
+            //nueva_grilla = new DataGridView();
+            //Grilla3 = nueva_grilla.Name.ToString();
+            Ejecutar_consulta("select * from ", "Proveedores", nueva_grilla);
+
+        }*/
+
+       
        
         
     }

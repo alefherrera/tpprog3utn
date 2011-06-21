@@ -36,3 +36,13 @@ D:\Tp UTN\versiones\Parcial Prog\obj\Debug\WindowsFormsApplication1.Login.resour
 D:\Tp UTN\versiones\Parcial Prog\obj\Debug\WindowsFormsApplication1.Principal.resources
 D:\Tp UTN\versiones\Parcial Prog\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 D:\Tp UTN\versiones\Parcial Prog\obj\Debug\FinalProgIII.csproj.GenerateResource.Cache
+D:\Tp UTN\version3\Parcial Prog\bin\Debug\WindowsFormsApplication1.exe.config
+D:\Tp UTN\version3\Parcial Prog\obj\Debug\WindowsFormsApplication1.exe
+D:\Tp UTN\version3\Parcial Prog\obj\Debug\WindowsFormsApplication1.pdb
+D:\Tp UTN\version3\Parcial Prog\bin\Debug\WindowsFormsApplication1.exe
+D:\Tp UTN\version3\Parcial Prog\bin\Debug\WindowsFormsApplication1.pdb
+D:\Tp UTN\version3\Parcial Prog\obj\Debug\ResolveAssemblyReference.cache
+D:\Tp UTN\version3\Parcial Prog\obj\Debug\WindowsFormsApplication1.Login.resources
+D:\Tp UTN\version3\Parcial Prog\obj\Debug\WindowsFormsApplication1.Principal.resources
+D:\Tp UTN\version3\Parcial Prog\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\Tp UTN\version3\Parcial Prog\obj\Debug\FinalProgIII.csproj.GenerateResource.Cache
