@@ -20,17 +20,39 @@ namespace WindowsFormsApplication1
         SqlDataAdapter adaptador;
         DataSet dataset;
 
-        TabPage nueva_pestaña;
-        DataGridView nueva_grilla;
-
-
         public Principal()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Crea una nueva pestaña
+        /// </summary>
+        /// <param name="a">Texto que se mostrara como titulo de la pestaña</param>
+        public void crear_pestaña(string a)
+        {
+            tabControl1.TabPages.Add(a);
+            tabControl1.TabPages[tabControl1.TabPages.Count - 1].Location = new System.Drawing.Point(4, 22);
+            tabControl1.TabPages[tabControl1.TabPages.Count - 1].Padding = new System.Windows.Forms.Padding(3);
+            tabControl1.TabPages[tabControl1.TabPages.Count - 1].Size = new System.Drawing.Size(752, 400);
+        }
+
+        /// <summary>
+        /// Crea una nueva grilla
+        /// </summary>
+        /// <returns>Devuelve una grilla adaptada para la pestaña</returns>
+        public DataGridView crear_grilla()
+        {
+            DataGridView nueva_grilla = new DataGridView();
+            nueva_grilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            nueva_grilla.Location = new System.Drawing.Point(3, 3);
+            nueva_grilla.Name = "Grilla3";
+            nueva_grilla.Size = new System.Drawing.Size(746, 394);
+            return nueva_grilla;
+        }
+
        /// <summary>
-       /// Funcion que crea la consulta, y carga la tabla en una matriz
+       /// Crea la consulta, y carga la tabla en una matriz
        /// </summary>
        /// <param name="a">Nombre de la Tabla</param>
         public void crear_conexion(string a)
@@ -46,7 +68,7 @@ namespace WindowsFormsApplication1
         /// </summary>
         /// <param name="a">Consulta</param>
         /// <param name="b">Nombre de la Tabla</param>
-        /// <param name="a">Nombre de la Grilla</param>
+        /// <param name="c">Nombre de la Grilla</param>
         public void Ejecutar_consulta(string a, string b, DataGridView c)
         {
             ConsultaSql = a;
@@ -54,27 +76,22 @@ namespace WindowsFormsApplication1
             c.DataSource = dataset.Tables[b];
             adaptador.Dispose();
         }
-
-        public void Crear_pestaña(string a)
-        {
-            nueva_pestaña = new TabPage(a);
-            tabControl1.TabPages.Add(nueva_pestaña);
-        }
-
-        public void Crear_grid(string a)
-        {
-            nueva_grilla = new DataGridView();
-            nueva_grilla.Name = a;
-        }
         
+
         private void Principal_Load(object sender, EventArgs e)
         {
-            
-            //nueva_pestaña = new TabPage("nueva");
-            //tabControl1.TabPages.Add(nueva_pestaña);
             conexion = new SqlConnection(rutaSql);
             this.Hide();//Oculta esta ventana
             login.ShowDialog();//Muestra la ventana de Login
+
+            DataGridView Grilla = crear_grilla();
+            tabControl1.TabPages[0].Controls.Add(Grilla);
+            Ejecutar_consulta("select * from ", "Articulos", Grilla);
+            
+            DataGridView Grilla2 = crear_grilla();
+            tabControl1.TabPages[1].Controls.Add(Grilla2);
+            Ejecutar_consulta("select * from ", "Proveedores", Grilla2);
+
             conexion.Open();
             Ejecutar_consulta("select * from ", "Articulos", Grilla);
             Ejecutar_consulta("select * from ", "Proveedores", Grilla2);
@@ -85,37 +102,33 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-        /*private void BotonAcept_Click(object sender, EventArgs e)
-        {
-
-            dataset.Clear();
-            Ejecutar_consulta(false, con_insert, "Loggear(usuario,pass) values('" + textBox1.Text + "','" + textBox2.Text + "')", "Loggear");
-            Ejecutar_consulta(false, con_mostrar, "Loggear", "Loggear");
-        }*/
-
         private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnclose_Click(object sender, EventArgs e)
+        private void botonclosetab_Click(object sender, EventArgs e)
         {
-            if((tabControl1.SelectedTab != Pest1) && (tabControl1.SelectedTab != Pest2))
-            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+            if ((tabControl1.SelectedTab != pest_articulos) && (tabControl1.SelectedTab != pest_ventas))
+                tabControl1.TabPages.Remove(tabControl1.SelectedTab);
         }
 
-        /*private void proveedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Crear_pestaña("Proveedores");
-           // Crear_grid("Grilla3");
-            //nueva_grilla = new DataGridView();
-            //Grilla3 = nueva_grilla.Name.ToString();
-            Ejecutar_consulta("select * from ", "Proveedores", nueva_grilla);
+            crear_pestaña("Proveedores");
+            DataGridView Grilla3 = crear_grilla();           
+            tabControl1.TabPages[tabControl1.TabPages.Count-1].Controls.Add(Grilla3);
+            Ejecutar_consulta("select * from ", "Proveedores", Grilla3);
 
-        }*/
+        }
 
-       
-       
-        
+        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            crear_pestaña("Facturas");
+            DataGridView Grilla4 = crear_grilla();
+            tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(Grilla4);
+            Ejecutar_consulta("select * from ", "Factura", Grilla4);
+
+        }      
     }
 }

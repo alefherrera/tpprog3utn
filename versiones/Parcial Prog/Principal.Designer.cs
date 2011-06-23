@@ -30,27 +30,27 @@
         {
             this.textBox_codigo = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Pest1 = new System.Windows.Forms.TabPage();
-            this.Grilla = new System.Windows.Forms.DataGridView();
-            this.Pest2 = new System.Windows.Forms.TabPage();
-            this.Grilla2 = new System.Windows.Forms.DataGridView();
+            this.pest_articulos = new System.Windows.Forms.TabPage();
+            this.pest_ventas = new System.Windows.Forms.TabPage();
             this.BotonBuscar = new System.Windows.Forms.Button();
             this.textBox_nombre = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articulosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etiqueta_codigo = new System.Windows.Forms.Label();
             this.etiqueta_nombre = new System.Windows.Forms.Label();
             this.etiqueta_precio = new System.Windows.Forms.Label();
             this.etiqueta_monto = new System.Windows.Forms.Label();
+            this.botonclosetab = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.Pest1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
-            this.Pest2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grilla2)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,55 +63,33 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.Pest1);
-            this.tabControl1.Controls.Add(this.Pest2);
+            this.tabControl1.Controls.Add(this.pest_articulos);
+            this.tabControl1.Controls.Add(this.pest_ventas);
             this.tabControl1.Location = new System.Drawing.Point(12, 124);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(760, 426);
             this.tabControl1.TabIndex = 2;
-           
             // 
-            // Pest1
+            // pest_articulos
             // 
-            this.Pest1.Controls.Add(this.Grilla);
-            this.Pest1.Location = new System.Drawing.Point(4, 22);
-            this.Pest1.Name = "Pest1";
-            this.Pest1.Padding = new System.Windows.Forms.Padding(3);
-            this.Pest1.Size = new System.Drawing.Size(752, 400);
-            this.Pest1.TabIndex = 0;
-            this.Pest1.Text = "Productos";
-            this.Pest1.UseVisualStyleBackColor = true;
+            this.pest_articulos.Location = new System.Drawing.Point(4, 22);
+            this.pest_articulos.Name = "pest_articulos";
+            this.pest_articulos.Padding = new System.Windows.Forms.Padding(3);
+            this.pest_articulos.Size = new System.Drawing.Size(752, 400);
+            this.pest_articulos.TabIndex = 0;
+            this.pest_articulos.Text = "Productos";
+            this.pest_articulos.UseVisualStyleBackColor = true;
             // 
-            // Grilla
+            // pest_ventas
             // 
-            this.Grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grilla.Location = new System.Drawing.Point(3, 3);
-            this.Grilla.Name = "Grilla";
-            this.Grilla.Size = new System.Drawing.Size(746, 394);
-            this.Grilla.TabIndex = 0;
-            // 
-            // Pest2
-            // 
-            this.Pest2.Controls.Add(this.Grilla2);
-            this.Pest2.Location = new System.Drawing.Point(4, 22);
-            this.Pest2.Name = "Pest2";
-            this.Pest2.Padding = new System.Windows.Forms.Padding(3);
-            this.Pest2.Size = new System.Drawing.Size(752, 400);
-            this.Pest2.TabIndex = 1;
-            this.Pest2.Text = "Ventas";
-            this.Pest2.UseVisualStyleBackColor = true;
-            // 
-            // Grilla2
-            // 
-            this.Grilla2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grilla2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grilla2.Location = new System.Drawing.Point(3, 3);
-            this.Grilla2.Name = "Grilla2";
-            this.Grilla2.Size = new System.Drawing.Size(746, 394);
-            this.Grilla2.TabIndex = 0;
-            
+            this.pest_ventas.Location = new System.Drawing.Point(4, 22);
+            this.pest_ventas.Name = "pest_ventas";
+            this.pest_ventas.Padding = new System.Windows.Forms.Padding(3);
+            this.pest_ventas.Size = new System.Drawing.Size(752, 400);
+            this.pest_ventas.TabIndex = 1;
+            this.pest_ventas.Text = "Ventas";
+            this.pest_ventas.UseVisualStyleBackColor = true;
             // 
             // BotonBuscar
             // 
@@ -159,15 +137,55 @@
             // 
             // editarToolStripMenuItem
             // 
+            this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarToolStripMenuItem});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
+            // agregarToolStripMenuItem
+            // 
+            this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.articulosToolStripMenuItem1,
+            this.proveedoresToolStripMenuItem1});
+            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.agregarToolStripMenuItem.Text = "Agregar";
+            // 
+            // articulosToolStripMenuItem1
+            // 
+            this.articulosToolStripMenuItem1.Name = "articulosToolStripMenuItem1";
+            this.articulosToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.articulosToolStripMenuItem1.Text = "Articulos";
+            // 
+            // proveedoresToolStripMenuItem1
+            // 
+            this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
+            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem1.Text = "Proveedores";
+            // 
             // verToolStripMenuItem
             // 
+            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.articulosToolStripMenuItem,
+            this.proveedoresToolStripMenuItem});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
             this.verToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
             this.verToolStripMenuItem.Text = "Ver";
+            // 
+            // articulosToolStripMenuItem
+            // 
+            this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.articulosToolStripMenuItem.Text = "Facturas";
+            this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
             // herramientasToolStripMenuItem
             // 
@@ -211,11 +229,23 @@
             this.etiqueta_monto.TabIndex = 9;
             this.etiqueta_monto.Text = "$";
             // 
+            // botonclosetab
+            // 
+            this.botonclosetab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonclosetab.Location = new System.Drawing.Point(738, 106);
+            this.botonclosetab.Name = "botonclosetab";
+            this.botonclosetab.Size = new System.Drawing.Size(23, 23);
+            this.botonclosetab.TabIndex = 10;
+            this.botonclosetab.Text = "X";
+            this.botonclosetab.UseVisualStyleBackColor = true;
+            this.botonclosetab.Click += new System.EventHandler(this.botonclosetab_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.botonclosetab);
             this.Controls.Add(this.etiqueta_monto);
             this.Controls.Add(this.etiqueta_precio);
             this.Controls.Add(this.etiqueta_nombre);
@@ -226,14 +256,11 @@
             this.Controls.Add(this.textBox_codigo);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Principal";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.tabControl1.ResumeLayout(false);
-            this.Pest1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grilla)).EndInit();
-            this.Pest2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grilla2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -245,10 +272,9 @@
 
         private System.Windows.Forms.TextBox textBox_codigo;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage Pest1;
-        private System.Windows.Forms.TabPage Pest2;
+        private System.Windows.Forms.TabPage pest_articulos;
+        private System.Windows.Forms.TabPage pest_ventas;
         private System.Windows.Forms.Button BotonBuscar;
-        private System.Windows.Forms.DataGridView Grilla;
         private System.Windows.Forms.TextBox textBox_nombre;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
@@ -256,11 +282,16 @@
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
-        private System.Windows.Forms.DataGridView Grilla2;
         private System.Windows.Forms.Label etiqueta_codigo;
         private System.Windows.Forms.Label etiqueta_nombre;
         private System.Windows.Forms.Label etiqueta_precio;
         private System.Windows.Forms.Label etiqueta_monto;
+        private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.Button botonclosetab;
     }
 }
 
