@@ -28,28 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_user = new System.Windows.Forms.TextBox();
+            this.tb_pass = new System.Windows.Forms.TextBox();
             this.labeluser = new System.Windows.Forms.Label();
             this.labelpass = new System.Windows.Forms.Label();
             this.logear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tb_user
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.tb_user.Location = new System.Drawing.Point(104, 27);
+            this.tb_user.Name = "tb_user";
+            this.tb_user.Size = new System.Drawing.Size(100, 20);
+            this.tb_user.TabIndex = 0;
             // 
-            // textBox2
+            // tb_pass
             // 
-            this.textBox2.Location = new System.Drawing.Point(104, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.tb_pass.Location = new System.Drawing.Point(104, 69);
+            this.tb_pass.Name = "tb_pass";
+            this.tb_pass.PasswordChar = '*';
+            this.tb_pass.Size = new System.Drawing.Size(100, 20);
+            this.tb_pass.TabIndex = 1;
             // 
             // labeluser
             // 
@@ -87,12 +86,11 @@
             this.Controls.Add(this.logear);
             this.Controls.Add(this.labelpass);
             this.Controls.Add(this.labeluser);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_pass);
+            this.Controls.Add(this.tb_user);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,8 +98,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_user;
+        private System.Windows.Forms.TextBox tb_pass;
         private System.Windows.Forms.Label labeluser;
         private System.Windows.Forms.Label labelpass;
         private System.Windows.Forms.Button logear;

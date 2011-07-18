@@ -48,11 +48,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
+    <Compile Include="Agregar\Agregar_Artxprov.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Agregar\Agregar_Artxprov.Designer.cs">
+      <DependentUpon>Agregar_Artxprov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\Agregar_Prov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\Agregar_Prov.Designer.cs">
+      <DependentUpon>Agregar_Prov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\Agregar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\Agregar_Usuario.Designer.cs">
+      <DependentUpon>Agregar_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\Agregar_Art.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\Agregar_Art.Designer.cs">
+      <DependentUpon>Agregar_Art.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\DetalleFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mostrar\DetalleFactura.Designer.cs">
+      <DependentUpon>DetalleFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar\Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar\Eliminar.Designer.cs">
+      <DependentUpon>Eliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones.cs" />
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar\Modif_Art.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar\Modif_Art.Designer.cs">
+      <DependentUpon>Modif_Art.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar\Modif_Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar\Modif_Proveedor.Designer.cs">
+      <DependentUpon>Modif_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar\Modif_Pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar\Modif_Pass.Designer.cs">
+      <DependentUpon>Modif_Pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\Pass_adm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\Pass_adm.Designer.cs">
+      <DependentUpon>Pass_adm.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -62,8 +123,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Agregar\Agregar_Art.resx">
+      <DependentUpon>Agregar_Art.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\Agregar_Artxprov.resx">
+      <DependentUpon>Agregar_Artxprov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\Agregar_Prov.resx">
+      <DependentUpon>Agregar_Prov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\Agregar_Usuario.resx">
+      <DependentUpon>Agregar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mostrar\DetalleFactura.resx">
+      <DependentUpon>DetalleFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar\Eliminar.resx">
+      <DependentUpon>Eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar\Modif_Art.resx">
+      <DependentUpon>Modif_Art.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar\Modif_Pass.resx">
+      <DependentUpon>Modif_Pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar\Modif_Proveedor.resx">
+      <DependentUpon>Modif_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mostrar\PuntoPedido.resx">
+      <DependentUpon>PuntoPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\Pass_adm.resx">
+      <DependentUpon>Pass_adm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -73,11 +167,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\Venta.resx">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,6 +185,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Agregar\Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar\PuntoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mostrar\PuntoPedido.Designer.cs">
+      <DependentUpon>PuntoPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
