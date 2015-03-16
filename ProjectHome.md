@@ -1,0 +1,1 @@
+Lugar para alojar todos los archivos que esten relacionados con el proyecto
